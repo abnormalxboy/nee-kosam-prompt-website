@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nee Kosam Prompt Website | AI Prompts</title>
+
+<meta name="description" content="Nee Kosam Prompt Website - Discover and share AI prompts, creative images, videos and ideas.">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#050816;
+    color:white;
+}
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(5,8,22,.9);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid #252b45;
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    padding:17px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:23px;
+    font-weight:800;
+    background:linear-gradient(90deg,#8b5cf6,#00d9ff);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+nav{
+    display:flex;
+    gap:24px;
+}
+
+nav a{
+    color:#dce2f2;
+    text-decoration:none;
+    font-size:14px;
+}
+
+nav a:hover{
+    color:#00d9ff;
+}
+
+.menu{
+    display:none;
+    font-size:27px;
+    cursor:pointer;
+}
+
+.hero{
+    min-height:650px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:80px 20px;
+    background:
+    radial-gradient(circle at 20% 20%,#321a70,transparent 30%),
+    radial-gradient(circle at 80% 20%,#064b62,transparent 28%),
+    #050816;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.badge{
+    display:inline-block;
+    padding:9px 18px;
+    border:1px solid #51428c;
+    border-radius:50px;
+    color:#c5baff;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:clamp(45px,8vw,82px);
+    line-height:1.05;
+    margin-bottom:25px;
+}
+
+.gradient{
+    background:linear-gradient(90deg,#fff,#8b5cf6,#00d9ff);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.hero p{
+    color:#aeb6ca;
+    font-size:18px;
+    max-width:700px;
+    margin:auto;
+}
+
+.buttons{
+    margin-top:35px;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:14px 24px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:bold;
+    display:inline-block;
+}
+
+.primary{
+    background:linear-gradient(90deg,#7c3aed,#06b6d4);
+    color:white;
+}
+
+.secondary{
+    border:1px solid #343c59;
+    color:white;
+    background:#10152a;
+}
+
+section{
+    max-width:1200px;
+    margin:auto;
+    padding:75px 20px;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.title h2{
+    font-size:37px;
+    margin-bottom:10px;
+}
+
+.title p{
+    color:#9ca6bd;
+}
+
+.search{
+    max-width:700px;
+    margin:0 auto 30px;
+}
+
+.search input{
+    width:100%;
+    padding:17px 20px;
+    background:#0d1327;
+    border:1px solid #2b3451;
+    border-radius:14px;
+    color:white;
+    outline:none;
+    font-size:16px;
+}
+
+.filters{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:35px;
+}
+
+.filter{
+    padding:9px 17px;
+    border-radius:30px;
+    border:1px solid #303952;
+    background:#0d1327;
+    color:#ddd;
+    cursor:pointer;
+}
+
+.filter.active,
+.filter:hover{
+    background:#7048e8;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.card{
+    background:linear-gradient(145deg,#10162b,#080d1d);
+    border:1px solid #252d47;
+    border-radius:20px;
+    padding:22px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-7px);
+    border-color:#7355df;
+}
+
+.category{
+    color:#00d9ff;
+    font-size:12px;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+.card h3{
+    margin-bottom:12px;
+}
+
+.prompt{
+    background:#070b18;
+    border-radius:12px;
+    padding:15px;
+    color:#aeb6ca;
+    font-size:14px;
+    margin:15px 0;
+    line-height:1.6;
+}
+
+.copy{
+    width:100%;
+    padding:11px;
+    border:0;
+    border-radius:10px;
+    background:#221a45;
+    color:#d9d2ff;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.copy:hover{
+    background:#7048e8;
+    color:white;
+}
+
+.media{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.media-card{
+    overflow:hidden;
+    background:#0d1327;
+    border:1px solid #252d47;
+    border-radius:18px;
+}
+
+.media-card img{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+    display:block;
+}
+
+.media-info{
+    padding:18px;
+}
+
+.media-info p{
+    color:#9ca6bd;
+    font-size:14px;
+    margin-top:6px;
+}
+
+.video{
+    width:100%;
+    aspect-ratio:16/9;
+    background:#000;
+}
+
+.video iframe{
+    width:100%;
+    height:100%;
+    border:0;
+}
+
+.feature{
+    padding:45px;
+    border:1px solid #292f4a;
+    border-radius:25px;
+    text-align:center;
+    background:
+    radial-gradient(circle at 20% 20%,#27175a,transparent 35%),
+    #0b1021;
+}
+
+.feature h2{
+    font-size:32px;
+    margin-bottom:15px;
+}
+
+.feature p{
+    color:#aab3c8;
+    max-width:700px;
+    margin:auto;
+    line-height:1.7;
+}
+
+.about{
+    max-width:800px;
+    margin:auto;
+    text-align:center;
+    padding:40px;
+    border:1px solid #292f4a;
+    border-radius:25px;
+    background:#0c1224;
+}
+
+.about p{
+    color:#aab3c8;
+    line-height:1.7;
+}
+
+footer{
+    border-top:1px solid #242a42;
+    text-align:center;
+    padding:40px 20px;
+    color:#8993aa;
+    line-height:2;
+}
+
+footer strong{
+    color:white;
+}
+
+.toast{
+    position:fixed;
+    bottom:25px;
+    left:50%;
+    transform:translate(-50%,100px);
+    background:#151c34;
+    border:1px solid #343d5d;
+    padding:13px 22px;
+    border-radius:12px;
+    opacity:0;
+    transition:.3s;
+    z-index:2000;
+}
+
+.toast.show{
+    opacity:1;
+    transform:translate(-50%,0);
+}
+
+@media(max-width:850px){
+
+    nav{
+        display:none;
+        position:absolute;
+        top:68px;
+        left:0;
+        width:100%;
+        background:#080d1d;
+        flex-direction:column;
+        text-align:center;
+        padding:20px;
+    }
+
+    nav.show{
+        display:flex;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .grid,
+    .media{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:600px){
+
+    .grid,
+    .media{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    section{
+        padding:60px 15px;
+    }
+
+    .logo{
+        font-size:18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="navbar">
+
+<div class="logo">
+✦ Nee Kosam Prompt Website
+</div>
+
+<div class="menu" onclick="toggleMenu()">☰</div>
+
+<nav id="nav">
+<a href="#home">Home</a>
+<a href="#prompts">Prompts</a>
+<a href="#videos">Videos</a>
+<a href="#images">Images</a>
+<a href="#about">About</a>
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<div class="badge">
+✨ Welcome to Nee Kosam Prompt Website
+</div>
+
+<h1>
+<span class="gradient">
+Nee Kosam
+</span>
+<br>
+Prompt Website
+</h1>
+
+<p>
+Discover AI prompts, creative ideas, AI images
+and AI videos. Copy a prompt and start creating.
+</p>
+
+<div class="buttons">
+
+<a href="#prompts" class="btn primary">
+🚀 Explore Prompts
+</a>
+
+<a href="#images" class="btn secondary">
+🖼️ View Images
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FEATURE -->
+
+<section>
+
+<div class="feature">
+
+<h2>🤖 Your AI Creative Hub</h2>
+
+<p>
+Nee Kosam Prompt Website is a place where
+people can discover, copy and share useful
+AI prompts, creative images, videos and ideas.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- PROMPTS -->
+
+<section id="prompts">
+
+<div class="title">
+
+<h2>🤖 AI Prompts</h2>
+
+<p>Search, explore and copy AI prompts.</p>
+
+</div>
+
+<div class="search">
+
+<input
+id="search"
+type="text"
+placeholder="🔍 Search prompts..."
+onkeyup="searchPrompts()">
+
+</div>
+
+<div class="filters">
+
+<button class="filter active"
+onclick="filterPrompts('all',this)">
+All
+</button>
+
+<button class="filter"
+onclick="filterPrompts('image',this)">
+🖼️ Image
+</button>
+
+<button class="filter"
+onclick="filterPrompts('video',this)">
+🎬 Video
+</button>
+
+<button class="filter"
+onclick="filterPrompts('character',this)">
+👤 Character
+</button>
+
+</div>
+
+
+<div class="grid">
+
+<!-- PROMPT 1 -->
+
+<div class="card"
+data-category="image"
+data-title="cinematic portrait">
+
+<div class="category">
+IMAGE PROMPT
+</div>
+
+<h3>Cinematic Portrait</h3>
+
+<div class="prompt">
+Ultra realistic cinematic portrait,
+dramatic lighting, detailed face,
+shallow depth of field, professional
+photography, 8K quality.
+</div>
+
+<button class="copy"
+onclick="copyPrompt(this)">
+📋 Copy Prompt
+</button>
+
+</div>
+
+
+<!-- PROMPT 2 -->
+
+<div class="card"
+data-category="video"
+data-title="cinematic ai video">
+
+<div class="category">
+VIDEO PROMPT
+</div>
+
+<h3>Cinematic AI Video</h3>
+
+<div class="prompt">
+Create a cinematic 4K video with smooth
+camera movement, realistic lighting,
+atmospheric background and professional
+movie quality.
+</div>
+
+<button class="copy"
+onclick="copyPrompt(this)">
+📋 Copy Prompt
+</button>
+
+</div>
+
+
+<!-- PROMPT 3 -->
+
+<div class="card"
+data-category="character"
+data-title="animated character">
+
+<div class="category">
+CHARACTER PROMPT
+</div>
+
+<h3>Animated Character</h3>
+
+<div class="prompt">
+Friendly animated character, expressive
+face, detailed clothing, full body,
+colorful cinematic environment and
+high-quality 3D style.
+</div>
+
+<button class="copy"
+onclick="copyPrompt(this)">
+📋 Copy Prompt
+</button>
+
+</div>
+
+
+<!-- PROMPT 4 -->
+
+<div class="card"
+data-category="image"
+data-title="village scene">
+
+<div class="category">
+IMAGE PROMPT
+</div>
+
+<h3>Village Cinematic Scene</h3>
+
+<div class="prompt">
+Beautiful South Indian village, green
+fields, golden sunset, traditional houses,
+cinematic atmosphere and ultra-realistic
+details.
+</div>
+
+<button class="copy"
+onclick="copyPrompt(this)">
+📋 Copy Prompt
+</button>
+
+</div>
+
+
+<!-- PROMPT 5 -->
+
+<div class="card"
+data-category="video"
+data-title="camera movement">
+
+<div class="category">
+VIDEO PROMPT
+</div>
+
+<h3>Smooth Camera Movement</h3>
+
+<div class="prompt">
+Slow cinematic camera movement, smooth
+dolly shot, natural motion, realistic
+depth of field and professional film
+lighting.
+</div>
+
+<button class="copy"
+onclick="copyPrompt(this)">
+📋 Copy Prompt
+</button>
+
+</div>
+
+
+<!-- PROMPT 6 -->
+
+<div class="card"
+data-category="character"
+data-title="farmer character">
+
+<div class="category">
+CHARACTER PROMPT
+</div>
+
+<h3>AI Farmer Character</h3>
+
+<div class="prompt">
+Cute animated Indian farmer, traditional
+clothing, standing in a green agricultural
+field, friendly expression, full body,
+cinematic 3D animation.
+</div>
+
+<button class="copy"
+onclick="copyPrompt(this)">
+📋 Copy Prompt
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- VIDEOS -->
+
+<section id="videos">
+
+<div class="title">
+
+<h2>🎬 AI Videos</h2>
+
+<p>Watch my AI videos and creative projects.</p>
+
+</div>
+
+<div class="media">
+
+<!-- YOUR YOUTUBE SHORT -->
+
+<div class="media-card">
+
+<div class="video">
+
+<iframe
+src="https://www.youtube.com/embed/dor7EYiE6ZY"
+title="Nee Kosam AI Video"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen>
+</iframe>
+
+</div>
+
+<div class="media-info">
+
+<h3>My AI Video</h3>
+
+<p>My latest AI video from Nee Kosam.</p>
+
+</div>
+
+</div>
+
+
+<!-- SECOND VIDEO -->
+
+<div class="media-card">
+
+<div class="video">
+  <iframe
+    src="https://www.youtube.com/embed/x_J2J6KFFkw"
+    title="Nee Kosam AI Video"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+</iframe>
+
+</div>
+
+<div class="media-info">
+
+<h3>Creative AI Project</h3>
+
+<p>Add your next YouTube video here.</p>
+
+</div>
+
+</div>
+
+
+<!-- THIRD VIDEO -->
+
+<div class="media-card">
+
+<div class="video">
+  <iframe
+    src="https://www.youtube.com/embed/qTfQmRsIJ0E"
+    title="Nee Kosam AI Video"
+    allowfullscreen>
+</iframe>
+
+<div class="media-info">
+
+<h3>AI Experiment</h3>
+
+<p>Add another AI video here.</p>
+  
+
+</div>
+
+<div class="media-info">
+
+<h3>Creative AI Project</h3>
+
+<p>Add your next YouTube video here.</p>
+
+</div>
+
+</div>
+
+
+<!-- THIRD VIDEO -->
+
+<div class="media-card">
+
+<div class="video">
+
+<iframe
+    src="https://www.youtube.com/embed/oRFbuBEhd8c"
+    title="Nee Kosam Video"
+    allowfullscreen>
+</iframe>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- IMAGES -->
+
+<section id="images">
+
+<div class="title">
+
+<h2>🖼️ AI Images</h2>
+
+<p>Explore creative AI-generated images.</p>
+
+</div>
+
+<div class="media">
+
+<div class="media-card">
+
+<img
+src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=80"
+alt="AI Image">
+
+<div class="media-info">
+
+<h3>AI Future</h3>
+
+<p>Artificial intelligence artwork.</p>
+
+</div>
+
+</div>
+
+
+<div class="media-card">
+
+<img
+src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=900&q=80"
+alt="Creative AI">
+
+<div class="media-info">
+
+<h3>Creative World</h3>
+
+<p>Creative digital artwork.</p>
+
+</div>
+
+</div>
+
+
+<div class="media-card">
+
+<img
+src="https://images.unsplash.com/photo-1535378917042-10a22c95931a?auto=format&fit=crop&w=900&q=80"
+alt="Technology">
+
+<div class="media-info">
+
+<h3>Future Technology</h3>
+
+<p>Futuristic technology artwork.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="title">
+
+<h2>👋 About</h2>
+
+</div>
+
+<div class="about">
+
+<p>
+<strong>Nee Kosam Prompt Website</strong>
+is a creative platform for discovering
+and sharing AI prompts, images, videos
+and creative ideas.
+</p>
+
+<br>
+
+<p>
+Create • Explore • Copy • Share
+</p>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<p>
+© <span id="year"></span>
+<strong>Nee Kosam Prompt Website</strong>
+</p>
+
+<p>
+AI Prompts • AI Images • AI Videos • Creative Ideas
+</p>
+
+</footer>
+
+
+<div class="toast" id="toast">
+✅ Prompt copied!
+</div>
+
+
+<script>
+
+function toggleMenu(){
+
+document.getElementById("nav")
+.classList.toggle("show");
+
+}
+
+
+function copyPrompt(button){
+
+const card=button.closest(".card");
+
+const text=card
+.querySelector(".prompt")
+.innerText;
+
+navigator.clipboard.writeText(text)
+.then(()=>{
+
+button.innerText="✅ Copied!";
+
+const toast=document
+.getElementById("toast");
+
+toast.classList.add("show");
+
+setTimeout(()=>{
+
+toast.classList.remove("show");
+
+},1800);
+
+setTimeout(()=>{
+
+button.innerText="📋 Copy Prompt";
+
+},1500);
+
+})
+.catch(()=>{
+
+alert("Please copy the prompt manually.");
+
+});
+
+}
+
+
+function filterPrompts(category,button){
+
+const cards=document
+.querySelectorAll(".card");
+
+document
+.querySelectorAll(".filter")
+.forEach(btn=>{
+btn.classList.remove("active");
+});
+
+button.classList.add("active");
+
+cards.forEach(card=>{
+
+if(category==="all" ||
+card.dataset.category===category){
+
+card.style.display="block";
+
+}else{
+
+card.style.display="none";
+
+}
+
+});
+
+}
+
+
+function searchPrompts(){
+
+const search=document
+.getElementById("search")
+.value
+.toLowerCase();
+
+document
+.querySelectorAll(".card")
+.forEach(card=>{
+
+const title=card
+.dataset.title
+.toLowerCase();
+
+const text=card
+.querySelector(".prompt")
+.innerText
+.toLowerCase();
+
+if(title.includes(search) ||
+text.includes(search)){
+
+card.style.display="block";
+
+}else{
+
+card.style.display="none";
+
+}
+
+});
+
+}
+
+
+document.getElementById("year")
+.innerText=new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
